@@ -1,0 +1,62 @@
+{
+  "name": "PPE Detection",
+  "model_path": "model.pt",
+  "description": "Detects face masks and violations in real-time",
+  "class_labels": [
+  "Hardhat",
+  "Mask",
+  "NO-Hardhat",
+  "NO-Mask",
+  "NO-Safety Vest",
+  "Person",
+  "Safety Cone",
+  "Safety Vest",
+  "machinery",
+  "vehicle"
+ ],
+"violation_classes": [
+  "NO-Hardhat",
+  "NO-Mask",
+  "NO-Safety Vest"
+ ],
+
+  "log_columns": [
+    "Timestamp",
+    "Mask",
+    "Confidence",
+    "Status"
+  ],
+  "column_mapping": {
+    "Timestamp": "timestamp",
+    "Mask": "label",
+    "Confidence": "confidence",
+    "Status": "status"
+  },
+  "ui": {
+    "theme": "dark",
+    "primary_color": "#3B82F6",
+    "violation_tag_color": "#EF4444",
+    "safe_tag_color": "#22C55E"
+  },
+  "gallery": {
+    "preview_label": "without_mask",
+    "max_items": 100,
+    "image_folder": "detections",
+    "sort_order": "desc"
+  },
+  "detection_logic": {
+    "save_only_violation": true,
+    "min_confidence": 0.2,
+    "draw_boxes": true,
+    "draw_labels": true
+  },
+  "log_behavior": {
+    "csv_path": "detections/log.csv",
+    "fields": ["timestamp", "label", "confidence", "status" ,"person_id"]
+  },
+  "stream_settings": {
+    "width": 640,
+    "height": 480,
+    "fps": 15
+  }
+}
