@@ -7,10 +7,10 @@ from datetime import datetime
 from AWSIoTPythonSDK.MQTTLib import AWSIoTMQTTClient
 
 # === AWS IoT MQTT CONFIG ===
-AWS_IOT_ENDPOINT = "a12dkrwrglx5kg-ats.iot.ap-south-1.amazonaws.com"
-DEVICE_ID = "682c52b596e689664ffd6024"
-PROJECT_ID = "6847d71c1325f31a81a0ed94"
-S3_BUCKET = "replisense-alerts"
+AWS_IOT_ENDPOINT = ""
+DEVICE_ID = ""
+PROJECT_ID = ""
+S3_BUCKET = ""
 
 # === MQTT TLS FILES ===
 CA_PATH = "AmazonRootCA1.pem"
